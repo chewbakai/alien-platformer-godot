@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Tiles/TileStands.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Level1.gd" type="Script" id=2]
+[ext_resource path="res://Tiles/TileLetters.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Key/Key.tscn" type="PackedScene" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 408, 10 )
+
+[node name="Level1" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 271.814, 135.012 ],
+"_edit_vertical_guides_": [ 480.0, 960.0 ]
+}
+
+[node name="TileStands" parent="." instance=ExtResource( 1 )]
+tile_data = PoolIntArray( 196650, 42, 0, 262186, 42, 0, 327722, 42, 0, 393258, 42, 0, 458794, 42, 0, 655402, 42, 0, 720896, 27, 0, 720897, 29, 0, 720936, 27, 0, 720937, 28, 0, 720938, 42, 0, 786432, 34, 0, 786433, 30, 0, 786460, 27, 0, 786461, 28, 0, 786462, 28, 0, 786463, 28, 0, 786464, 28, 0, 786465, 28, 0, 786466, 28, 0, 786467, 29, 0, 786472, 34, 0, 786474, 42, 0, 851968, 34, 0, 851969, 30, 0, 851992, 35, 0, 851996, 34, 0, 852003, 30, 0, 852008, 34, 0, 852010, 42, 0, 917504, 34, 0, 917505, 30, 0, 917511, 27, 0, 917512, 28, 0, 917513, 28, 0, 917514, 28, 0, 917515, 28, 0, 917516, 28, 0, 917517, 28, 0, 917518, 28, 0, 917519, 28, 0, 917520, 28, 0, 917521, 28, 0, 917522, 28, 0, 917523, 29, 0, 917528, 36, 0, 917532, 34, 0, 917539, 30, 0, 917544, 34, 0, 917546, 42, 0, 983040, 34, 0, 983041, 30, 0, 983047, 34, 0, 983059, 30, 0, 983064, 36, 0, 983068, 34, 0, 983075, 30, 0, 983080, 34, 0, 983082, 42, 0, 1048576, 34, 0, 1048577, 30, 0, 1048580, 35, 0, 1048583, 34, 0, 1048595, 30, 0, 1048600, 36, 0, 1048604, 34, 0, 1048611, 30, 0, 1048616, 34, 0, 1048618, 42, 0 )
+
+[node name="Fall" type="Area2D" parent="."]
+position = Vector2( -2.64865, 41.319 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fall"]
+position = Vector2( 318.649, 242.681 )
+shape = SubResource( 1 )
+
+[node name="TileLetters" parent="." instance=ExtResource( 3 )]
+cell_size = Vector2( 16, 16 )
+
+[node name="Key" parent="." instance=ExtResource( 5 )]
+position = Vector2( 463, 184 )
+[connection signal="body_entered" from="Fall" to="." method="_on_player_fall"]
