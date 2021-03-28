@@ -16,6 +16,7 @@ var door
 func _ready():
 	create_player()
 	create_door()
+	$AudioStreamPlayer.play()
 #	place_keys()
 
 func create_player():
@@ -43,10 +44,13 @@ func dialog(string):
 
 func _on_player_fall(body):
 	if body.get_name() == "Player":
+		$AudioStreamPlayer.stop()
+		player.die()
 		var fail = Fail.instance()
+		fail.previous_level = "1"
 		fail.get_node("Timer").connect("timeout", self, "_on_Fail_timeout")
 		add_child(fail)
-			
+		
 func _on_Fail_timeout():
 	restart_level()
 

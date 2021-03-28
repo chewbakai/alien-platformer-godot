@@ -1,0 +1,24 @@
+Guide
+
+Level 1 - Fall
+Level 2 - Fall, Spikes
+Level 3 - Fall, Spikes, Turrets
+Level 4 - Fall, Spikes, Turrets, Enemies
+Level 5 - Story Development
+Level 6 - Fall, Spikes, Turrets, Enemies, Potions
+Level 7 - Fall, Spikes, Turrets, Enemies, Potions, Moving Platforms
+Level 8 - Fall, Spikes, Turrets, Enemies, Potions, Moving Platforms, Invisible Keys
+Level 9 -  Story Development
+Level 10 - Boss Level
+
+
+Assets Used
+
+Menu SFX, Hurt - https://harvey656.itch.io/8-bit-game-sound-effects-collection
+Art - https://kenney.nl/assets/bit-platformer-pack
+Font - https://www.dafont.com/vcr-osd-mono.font
+Key - https://freesound.org/people/BeezleFM/sounds/512137/
+Jump - https://freesound.org/people/jeckkech/sounds/391670/
+Menu BGM -  https://www.youtube.com/watch?v=Bok8nLviThg&list=PLobY7vO0pgVKn4FRDgwXk5FUSiGS8_jA8&index=9
+Levels BGM -https://www.youtube.com/watch?v=HHYOBwzT4u4&list=PLwJjxqYuirCLkq42mGw4XKGQlpZSfxsYd&index=24
+

@@ -4,11 +4,12 @@ const FLOOR = Vector2(0,-1)
 const GRAVITY = 10
 
 var jump_power = -16*16
-var walk_speed = 16*10
+var walk_speed = 16*15
 var velocity = Vector2.ZERO
 var jumping = false
 var _name = "Player"
 var keys = 0
+var dead = false
 
 func _ready():
 	pass
@@ -19,13 +20,14 @@ func _physics_process(_delta):
 	var walk_east = Input.is_action_pressed("walk_east")
 	var walk_west = Input.is_action_pressed("walk_west")
 	var jump = Input.is_action_just_pressed("jump")
-	
-	if walk_east:
-		play_animation("walk_east")
-		change_velocity('x',walk_speed)
+		
 	if walk_west:
 		play_animation("walk_west")
 		change_velocity('x',-walk_speed)
+	if walk_east:
+		play_animation("walk_east")
+		change_velocity('x',walk_speed)
+
 	if !walk_east && !walk_west:
 		play_animation("idle")
 	if jump && is_on_floor():
@@ -38,30 +40,6 @@ func _physics_process(_delta):
 	velocity = move_and_slide(velocity,FLOOR)
 
 	pass
-
-#func get_input():
-#	velocity.x = 0 ## Friction??
-#
-#	var walk_east = Input.is_action_pressed("walk_east")
-#	var walk_west = Input.is_action_pressed("walk_west")
-#	var jump = Input.is_action_just_pressed("jump")
-#
-#	if walk_east:
-#		play_animation("walk_east")
-#		change_velocity('x',walk_speed)
-#	if walk_west:
-#		play_animation("walk_west")
-#		change_velocity('x',-walk_speed)
-#	if !walk_east && !walk_west:
-#		play_animation("idle")
-#	if jump && is_on_floor():
-#		jumping = true
-#		play_animation("jump")
-#		change_velocity('y',jump_power)
-#
-#	change_velocity('y',GRAVITY) ## Apply gravity
-#
-#	velocity = move_and_slide(velocity,FLOOR)
 
 func change_velocity(axis,change):
 	if axis == 'x':
@@ -84,13 +62,15 @@ func play_animation(movement):
 		anim_sprite.play("idle")
 	if movement == "jump":
 		anim_sprite.play("jump")
+		play_sound("jump")
 
 func get_name():
 	return _name
 
 func die():
-	queue_free()
-
+	dead = true
+	play_sound("die")
+	
 func collect_key():
 	keys += 1
 
@@ -104,3 +84,20 @@ func set_camera_limits(tile_map):
 func set_position(pos):
 	position.x = pos.x
 	position.y = pos.y
+
+
+func _on_AudioStreamPlayer_finished():
+	if dead == true:
+		queue_free()
+		pass # Replace with function body.
+
+func play_sound(input):
+	var asset
+	match input:
+		"jump": asset = "res://Audio/jump_jekkech.wav"
+		"die": asset = "res://Audio/hurt_explosion_02.wav"
+	if asset:
+		var sfx = load(asset)
+		var aud = get_node("AudioStreamPlayer") 
+		aud.stream = sfx
+		aud.play()
