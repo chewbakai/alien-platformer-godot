@@ -31,10 +31,14 @@ func _input(event):
 			toggle_arrow(options[choice],false)
 		elif event.is_action_pressed("ui_accept"):
 			play_sound("enter")
-			if options[choice] == "Menu":
-				tree.paused = false
-				_show(false)
-				tree.change_scene("res://GUI/MainMenu.tscn")
+			tree.paused = false
+			_show(false)
+			match options[choice]:
+				"Menu":
+					tree.change_scene("res://GUI/MainMenu.tscn")
+				"Restart":
+					tree.change_scene("res://Levels/"+tree.current_scene.get_name()+".tscn")		
+					
 
 	
 func toggle_arrow(node,hide):

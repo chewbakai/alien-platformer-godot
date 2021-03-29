@@ -6,32 +6,15 @@ extends Node2D
 # var b = "text"
 const REQ_KEYS = 1
 
-var Player = preload("res://Actors/Player/Player.tscn")
-var Door = preload("res://Objects/Door/Door.tscn")
+#var Player = preload("res://Actors/Player/Player.tscn")
 var Fail = preload("res://GUI/Fail.tscn")
+onready var player = get_node("Player")
 #var Key = preload("res://Objects/Key/Key.tscn")
-var player
-var door 
 
 func _ready():
-	create_player()
-	create_door()
-	$AudioStreamPlayer.play()
-#	place_keys()
-
-func create_player():
-	player = Player.instance()
-	player.set_position({"x":13,"y":174})
 	player.set_camera_limits(get_node("TileStands"))
-	add_child(player)
+	get_node("Door/Area2D").connect("body_entered",self,"_on_Door_entered")
 
-func create_door():
-	door = Door.instance()
-	door.position.x = 665
-	door.position.y = 168
-	door.get_node("Area2D").connect("body_entered", self, "_on_Door_entered")
-	add_child(door)
-	
 func _on_Door_entered(body):
 	if body.get_name() == "Player":
 		if body.get_keys() >= REQ_KEYS:
@@ -56,10 +39,4 @@ func _on_Fail_timeout():
 
 func restart_level():
 	get_tree().change_scene("res://Levels/Level1.tscn")
-
-#func place_keys():
-#	var key = Key.instance()
-#	key.position.x = 158
-#	key.position.y = 202	
-#	add_child(key)
 

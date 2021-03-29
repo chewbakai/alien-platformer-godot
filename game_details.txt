@@ -14,11 +14,11 @@ Level 10 - Boss Level
 
 Assets Used
 
-Menu SFX, Hurt - https://harvey656.itch.io/8-bit-game-sound-effects-collection
+Selct , Hurt - https://harvey656.itch.io/8-bit-game-sound-effects-collection
 Art - https://kenney.nl/assets/bit-platformer-pack
 Font - https://www.dafont.com/vcr-osd-mono.font
 Key - https://freesound.org/people/BeezleFM/sounds/512137/
 Jump - https://freesound.org/people/jeckkech/sounds/391670/
 Menu BGM -  https://www.youtube.com/watch?v=Bok8nLviThg&list=PLobY7vO0pgVKn4FRDgwXk5FUSiGS8_jA8&index=9
 Levels BGM -https://www.youtube.com/watch?v=HHYOBwzT4u4&list=PLwJjxqYuirCLkq42mGw4XKGQlpZSfxsYd&index=24
-
+Enter sfx -https://freesound.org/people/victorium183/sounds/476818/

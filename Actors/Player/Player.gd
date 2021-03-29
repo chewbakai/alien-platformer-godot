@@ -100,4 +100,6 @@ func play_sound(input):
 		var sfx = load(asset)
 		var aud = get_node("AudioStreamPlayer") 
 		aud.stream = sfx
+		if input == "jump":
+			aud.set_volume_db(-10)
 		aud.play()

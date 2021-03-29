@@ -1,0 +1,13 @@
+[gd_scene format=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 165.0
+margin_top = 83.0
+margin_right = 205.0
+margin_bottom = 97.0
+text = "heyw"
+__meta__ = {
+"_edit_use_anchors_": false
+}

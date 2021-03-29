@@ -37,14 +37,15 @@ func toggle_arrow(node,hide):
 		sprite.show()
 		
 func play_sound(input):
+	var aud = get_node("AudioStreamPlayer") 
 	var asset
 	match input:
-		"select": 
-			asset = "res://Audio/select_menu_085.wav"		
-		"enter": 
+		"select":
+			asset = "res://Audio/select_menu_085.wav"	
+			aud.set_pitch_scale(1)
+		"enter":
 			asset = "res://Audio/enter_menu_150.wav"
-	if asset:
-		var sfx = load(asset)
-		var aud = get_node("AudioStreamPlayer") 
-		aud.stream = sfx
-		aud.play()
+			aud.set_pitch_scale(0.8)
+	var sfx = load(asset)
+	aud.stream = sfx
+	aud.play()
