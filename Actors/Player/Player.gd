@@ -9,17 +9,20 @@ var velocity = Vector2.ZERO
 var jumping = false
 var _name = "Player"
 var keys = 0
-var dead = false
+var is_alive = true
 
 func _ready():
 	pass
 
 func _physics_process(_delta):
+	if !is_alive:
+		return
 	velocity.x = 0 ## Friction??
 	
 	var walk_east = Input.is_action_pressed("walk_east")
 	var walk_west = Input.is_action_pressed("walk_west")
 	var jump = Input.is_action_just_pressed("jump")
+		
 		
 	if walk_west:
 		play_animation("walk_west")
@@ -68,8 +71,8 @@ func get_name():
 	return _name
 
 func die():
-	dead = true
 	play_sound("die")
+	is_alive = false
 	
 func collect_key():
 	keys += 1
@@ -87,7 +90,7 @@ func set_position(pos):
 
 
 func _on_AudioStreamPlayer_finished():
-	if dead == true:
+	if is_alive == false:
 		queue_free()
 		pass # Replace with function body.
 

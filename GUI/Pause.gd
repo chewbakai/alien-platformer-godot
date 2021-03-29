@@ -3,6 +3,7 @@ extends CanvasLayer
 var past = -1
 var options = ["Continue", "Restart", "Menu"]
 var choice = 0
+var bgm_helper = 0
 
 func _ready():
 	past = 0
@@ -13,7 +14,6 @@ func _input(event):
 	if !(event.is_action_pressed("pause") || event.is_action_pressed("ui_down") || event.is_action_pressed("crouch") || event.is_action_pressed("ui_accept")):
 		return
 	var tree = get_tree()
-	print(tree.current_scene.name)
 	if tree.current_scene.name == "MainMenu" || tree.current_scene.name == "Fail":
 		return
 	if event.is_action_pressed("pause"):
