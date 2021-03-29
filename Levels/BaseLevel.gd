@@ -3,7 +3,8 @@ extends Node2D
 const TOTAL_LEVELS = 5
 
 var req_keys = 0
-var Fail = preload("res://GUI/Fail.tscn")
+var Fail = preload("res://Levels/Extras/Fail.tscn")
+var Intro = preload("res://Levels/Extras/Intro.tscn")
 onready var player = get_node("Player")
 var level_number
 
@@ -15,6 +16,10 @@ func initialize(n_keys,lvl_number):
 	set_level_number(lvl_number)
 	player.set_camera_limits(get_node("TileStands"))
 	get_node("Door/Area2D").connect("body_entered",self,"_on_Door_entered")
+	var intro = Intro.instance()
+	intro.set_level(lvl_number)
+	add_child(intro)
+	resume_audio()
 	
 func set_req_keys(n_keys):
 	req_keys = n_keys
@@ -60,4 +65,11 @@ func dialog(string):
 
 func restart_level():
 	get_tree().change_scene("res://Levels/"+str(get_level_number())+".tscn")
+
+func resume_audio():
+	var audio = get_node("AudioStreamPlayer")
+	if(Pause.bgm_helper != 0):
+		audio.seek(Pause.bgm_helper)
+	else:
+		audio.seek(0)
 
