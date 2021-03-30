@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/Level1.gd" type="Script" id=2]
-[ext_resource path="res://Levels/Extras/Intro.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Audio/LevelBGM.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Objects/Key/Key.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Door/Door.tscn" type="PackedScene" id=6]
@@ -30,9 +29,6 @@ position = Vector2( 178, 38 )
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource( 4 )]
 volume_db = -10.0
-
-[node name="Intro" parent="." instance=ExtResource( 3 )]
-layer = -10
 
 [node name="TileMap" parent="." instance=ExtResource( 9 )]
 tile_data = PoolIntArray( 720896, 10, 0, 720897, 12, 0, 720936, 10, 0, 720937, 11, 0, 786432, 13, 0, 786433, 15, 0, 786460, 10, 0, 786461, 11, 0, 786462, 11, 0, 786463, 11, 0, 786464, 11, 0, 786465, 11, 0, 786466, 11, 0, 786467, 12, 0, 786472, 13, 0, 851968, 13, 0, 851969, 15, 0, 851992, 19, 0, 851996, 13, 0, 852003, 15, 0, 852008, 13, 0, 917504, 13, 0, 917505, 15, 0, 917511, 10, 0, 917512, 11, 0, 917513, 11, 0, 917514, 11, 0, 917515, 11, 0, 917516, 11, 0, 917517, 11, 0, 917518, 11, 0, 917519, 11, 0, 917520, 11, 0, 917521, 11, 0, 917522, 11, 0, 917523, 12, 0, 917528, 20, 0, 917532, 13, 0, 917539, 15, 0, 917544, 13, 0, 983040, 13, 0, 983041, 15, 0, 983047, 13, 0, 983059, 15, 0, 983064, 20, 0, 983068, 13, 0, 983075, 15, 0, 983080, 13, 0, 1048576, 13, 0, 1048577, 15, 0, 1048580, 19, 0, 1048583, 13, 0, 1048595, 15, 0, 1048600, 20, 0, 1048604, 13, 0, 1048611, 15, 0, 1048616, 13, 0 )

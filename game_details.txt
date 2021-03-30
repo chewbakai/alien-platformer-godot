@@ -4,12 +4,10 @@ Level 1 - Fall
 Level 2 - Fall, Spikes
 Level 3 - Fall, Spikes, Turrets
 Level 4 - Fall, Spikes, Turrets, Enemies
-Level 5 - Story Development
-Level 6 - Fall, Spikes, Turrets, Enemies, Potions
-Level 7 - Fall, Spikes, Turrets, Enemies, Potions, Moving Platforms
-Level 8 - Fall, Spikes, Turrets, Enemies, Potions, Moving Platforms, Invisible Keys
-Level 9 -  Story Development
-Level 10 - Boss Level
+Level 5 - Fall, Spikes, Turrets, Enemies, Potions
+Level 6 - Fall, Spikes, Turrets, Enemies, Potions, Moving Platforms/Trap Platforms
+Level 7 - Fall, Spikes, Turrets, Enemies, Potions, Moving Platforms/Trap Platforms, Invisible Keys
+Level 8 - Boss Level
 
 
 Assets Used
