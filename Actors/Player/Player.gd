@@ -11,6 +11,8 @@ var _name = "Player"
 var keys = 0
 var is_alive = true
 
+signal die
+
 func _ready():
 	pass
 
@@ -71,8 +73,9 @@ func get_name():
 	return _name
 
 func die():
-	play_sound("die")
+	emit_signal("die")
 	is_alive = false
+	play_sound("die")
 	
 func collect_key():
 	keys += 1
@@ -92,7 +95,7 @@ func set_position(pos):
 func _on_AudioStreamPlayer_finished():
 	if is_alive == false:
 		queue_free()
-		pass # Replace with function body.
+		pass 
 
 func play_sound(input):
 	var asset

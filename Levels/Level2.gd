@@ -5,4 +5,4 @@ func _ready():
 
 func _on_Spike_body_entered(body):
 	if body.get_name() == "Player":
-		fail(body)
+		body.die()
