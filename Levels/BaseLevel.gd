@@ -11,10 +11,10 @@ var level_number
 func _ready():
 	pass
 	
-func initialize(n_keys,lvl_number):
+func initialize(n_keys,lvl_number,limit_right):
 	set_req_keys(n_keys)
 	set_level_number(lvl_number)
-#	player.set_camera_limits(get_node("TileStands"))
+	player.get_node("Camera2D").limit_right = limit_right
 	get_node("Door/Area2D").connect("body_entered",self,"_on_Door_entered")
 	get_node("Fall").connect("body_entered",self,"_on_Body_fall")
 	var intro = Intro.instance()
@@ -55,6 +55,7 @@ func _on_Door_entered(body):
 		Pause.bgm_helper = get_node("AudioStreamPlayer").get_playback_position()
 		if level_number != TOTAL_LEVELS:
 			get_tree().change_scene("res://Levels/Level"+str(get_level_number()+1)+".tscn")			
+			print("Go inside")
 		else:
 			play_credits()
 

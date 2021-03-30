@@ -3,7 +3,7 @@
 [ext_resource path="res://Objects/Spike/tile_0183.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 8.07034, 4.01865 )
+extents = Vector2( 7.19597, 3.95133 )
 
 [node name="Spike" type="Area2D"]
 
