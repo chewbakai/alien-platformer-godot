@@ -31,7 +31,6 @@ func _input(event):
 		init_game(lvl)
 		
 func init_game(lvl):
-	print("oy")
 	get_tree().change_scene("res://Levels/Level"+str(lvl)+".tscn")
 	
 func toggle_arrow(node,hide):

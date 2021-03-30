@@ -2,9 +2,6 @@ extends "BaseLevel.gd"
 
 
 func _ready():
-	initialize(1,3,480)
+	initialize(1,3,720)
 
 
-
-func _on_Spike_body_entered(body):
-	pass # Replace with function body.

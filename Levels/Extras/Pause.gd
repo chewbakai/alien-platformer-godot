@@ -30,6 +30,7 @@ func _input(event):
 			past = choice
 			toggle_arrow(options[choice],false)
 		elif event.is_action_pressed("ui_accept"):
+			bgm_helper = 0
 			play_sound("enter")
 			tree.paused = false
 			_show(false)
