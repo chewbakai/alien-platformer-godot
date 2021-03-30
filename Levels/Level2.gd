@@ -1,22 +1,8 @@
-extends Node2D
+extends "BaseLevel.gd"
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	var audio = get_node("AudioStreamPlayer")
-	if(Pause.bgm_helper != 0):
-		audio.seek(Pause.bgm_helper)
-	else:
-		audio.seek(0)
+	initialize(1,2)
 
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Spike_body_entered(body):
+	if body.get_name() == "Player":
+		fail(body)

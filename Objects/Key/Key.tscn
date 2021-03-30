@@ -5,7 +5,7 @@
 [ext_resource path="res://Objects/Key/beezlefm__key-sound.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 10, 6 )
+extents = Vector2( 8, 4 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "Move"
@@ -28,7 +28,6 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -2 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]

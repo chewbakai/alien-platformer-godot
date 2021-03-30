@@ -14,8 +14,9 @@ func _ready():
 func initialize(n_keys,lvl_number):
 	set_req_keys(n_keys)
 	set_level_number(lvl_number)
-	player.set_camera_limits(get_node("TileStands"))
+#	player.set_camera_limits(get_node("TileStands"))
 	get_node("Door/Area2D").connect("body_entered",self,"_on_Door_entered")
+	get_node("Fall").connect("body_entered",self,"_on_Body_fall")
 	var intro = Intro.instance()
 	intro.set_level(lvl_number)
 	add_child(intro)
@@ -33,17 +34,17 @@ func set_level_number(lvl):
 func get_level_number():
 	return level_number 
 
-func fail():
+func fail(player):
+	player.die()
 	get_node("AudioStreamPlayer").stop()
 	var fail = Fail.instance()
 	fail.current_level = get_level_number()
 	add_child(fail)
 	
 	
-func _on_player_fall(body):
+func _on_Body_fall(body):
 	if body.get_name() == "Player":
-		player.die()
-		fail()
+		fail(body)
 
 func _on_Door_entered(body):
 	if body.get_name() != "Player":

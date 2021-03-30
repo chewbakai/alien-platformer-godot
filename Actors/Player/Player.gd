@@ -4,7 +4,7 @@ const FLOOR = Vector2(0,-1)
 const GRAVITY = 10
 
 var jump_power = -16*16
-var walk_speed = 16*15
+var walk_speed = 16*5
 var velocity = Vector2.ZERO
 var jumping = false
 var _name = "Player"
@@ -81,8 +81,8 @@ func collect_key():
 func get_keys():
 	return keys
 
-func set_camera_limits(tile_map):
-	$Camera2D.limit_right = (tile_map.get_used_rect().end.x * 16) - 16
+#func set_camera_limits(tile_map):
+#	$Camera2D.limit_right = (tile_map.get_used_rect().end.x * 16) - 16
 
 func set_position(pos):
 	position.x = pos.x
