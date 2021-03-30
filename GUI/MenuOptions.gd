@@ -22,12 +22,17 @@ func _input(event):
 
 	elif event.is_action_pressed("ui_accept"):
 		play_sound("enter")
+		var lvl
 		match options[choice]:
+			"Continue":
+				lvl = load_file()
 			"NewGame": 
-				init_new_game()
-#
-func init_new_game():
-	get_tree().change_scene("res://Levels/Level1.tscn")
+				lvl = 1
+		init_game(lvl)
+		
+func init_game(lvl):
+	print("oy")
+	get_tree().change_scene("res://Levels/Level"+str(lvl)+".tscn")
 	
 func toggle_arrow(node,hide):
 	var sprite = get_node(node+"/Sprite")
@@ -49,3 +54,11 @@ func play_sound(input):
 	var sfx = load(asset)
 	aud.stream = sfx
 	aud.play()
+
+func load_file():
+	var save_game = File.new()
+	if ! save_game.file_exists("user://savegame.save"):
+		return 1
+	save_game.open("user://savegame.save",File.READ)
+	return (parse_json(save_game.get_line())["current_level"])
+	

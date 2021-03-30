@@ -18,11 +18,11 @@ func initialize(n_keys,lvl_number,limit_right):
 	player.get_node("Camera2D").limit_right = limit_right
 	get_node("Door/Area2D").connect("body_entered",self,"_on_Door_entered")
 	get_node("Fall").connect("body_entered",self,"_on_Body_fall")
-	
 	var intro = Intro.instance()
 	intro.set_level(lvl_number)
 	add_child(intro)
 	resume_audio()
+	save()
 	
 func set_req_keys(n_keys):
 	req_keys = n_keys
@@ -80,3 +80,11 @@ func resume_audio():
 	else:
 		audio.seek(0)
 
+func save():
+	var save_game = File.new()
+	save_game.open("user://savegame.save", File.WRITE)
+	var dict =  {
+		"current_level" : level_number
+	}
+	save_game.store_line(to_json(dict))
+	save_game.close()
