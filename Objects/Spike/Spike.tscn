@@ -4,7 +4,7 @@
 [ext_resource path="res://Objects/Spike/Spike.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 7.19597, 3.95133 )
+extents = Vector2( 6.00406, 3.95133 )
 
 [node name="Spike" type="Area2D"]
 script = ExtResource( 2 )

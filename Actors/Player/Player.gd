@@ -73,10 +73,11 @@ func get_name():
 	return _name
 
 func die():
-	emit_signal("die")
-	is_alive = false
-	play_sound("die")
-	
+	if is_alive:
+		emit_signal("die")
+		is_alive = false
+		play_sound("die")
+		
 func collect_key():
 	keys += 1
 

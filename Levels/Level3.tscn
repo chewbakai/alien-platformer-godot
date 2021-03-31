@@ -10,10 +10,10 @@
 [ext_resource path="res://Objects/Spike/Spike.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Objects/Key/Key.tscn" type="PackedScene" id=9]
 
-[node name="Node2D" type="Node2D"]
+[node name="Level3" type="Node2D"]
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_horizontal_guides_": [ 135.0 ],
+"_edit_horizontal_guides_": [ 136.0 ],
 "_edit_vertical_guides_": [ 720.0 ]
 }
 
@@ -21,12 +21,10 @@ __meta__ = {
 position = Vector2( 121, 217 )
 rotation = -6.28319
 scale = Vector2( -1, 1 )
-wait_time = 1.0
 
 [node name="StaticBody2D2" parent="." instance=ExtResource( 1 )]
 position = Vector2( 424, 154 )
 rotation = -6.28319
-wait_time = 1.0
 
 [node name="StaticBody2D3" parent="." instance=ExtResource( 1 )]
 position = Vector2( 404, 73 )
@@ -38,7 +36,7 @@ wait_time = 2.0
 tile_data = PoolIntArray( -65502, 27, 0, -65501, 27, 0, -65500, 27, 0, -65499, 27, 0, -65498, 27, 0, -65497, 27, 0, -65496, 27, 0, -65495, 27, 0, -65494, 27, 0, -65493, 27, 0, -65492, 27, 0, -65491, 27, 0, -65490, 27, 0, 65535, 27, 0, 17, 31, 0, 36, 31, 0, 45, 27, 0, 131071, 27, 0, 65553, 30, 0, 65572, 30, 0, 65581, 27, 0, 196607, 27, 0, 131089, 30, 0, 131108, 30, 0, 131117, 27, 0, 262143, 27, 0, 196625, 29, 0, 196644, 30, 0, 196653, 27, 0, 327679, 27, 0, 262160, 28, 0, 262180, 32, 0, 262189, 27, 0, 393215, 27, 0, 327690, 24, 0, 327691, 24, 0, 327705, 22, 0, 327706, 24, 0, 327707, 25, 0, 327716, 32, 0, 327725, 27, 0, 458751, 27, 0, 393252, 32, 0, 393261, 27, 0, 524287, 27, 0, 458788, 32, 0, 458797, 27, 0, 589823, 27, 0, 524293, 24, 0, 524294, 24, 0, 524318, 24, 0, 524319, 24, 0, 524320, 25, 0, 524324, 29, 0, 524333, 27, 0, 655359, 27, 0, 589859, 28, 0, 589869, 27, 0, 720895, 27, 0, 655386, 22, 0, 655387, 25, 0, 655405, 27, 0, 786431, 27, 0, 720906, 24, 0, 720907, 24, 0, 720908, 24, 0, 720941, 27, 0, 720942, 27, 0, 851967, 27, 0, 786433, 19, 0, 786449, 19, 0, 786477, 27, 0, 917503, 27, 0, 851969, 20, 0, 851985, 20, 0, 852000, 19, 0, 852009, 10, 0, 852010, 11, 0, 852011, 11, 0, 852012, 12, 0, 852013, 27, 0, 983039, 27, 0, 917505, 20, 0, 917509, 22, 0, 917510, 24, 0, 917511, 24, 0, 917521, 20, 0, 917522, 17, 0, 917523, 10, 0, 917524, 11, 0, 917525, 11, 0, 917526, 12, 0, 917535, 10, 0, 917536, 15, 0, 917543, 10, 0, 917544, 11, 0, 917548, 15, 0, 917549, 27, 0, 917550, 27, 0, 1048575, 27, 0, 983041, 20, 0, 983057, 13, 0, 983062, 15, 0, 983067, 19, 0, 983071, 13, 0, 983072, 15, 0, 983079, 13, 0, 983084, 15, 0, 983085, 27, 0, 1114111, 27, 0, 1048577, 20, 0, 1048593, 13, 0, 1048598, 15, 0, 1048603, 20, 0, 1048607, 13, 0, 1048608, 15, 0, 1048615, 13, 0, 1048620, 15, 0, 1048621, 27, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 520, 200 )
+position = Vector2( 24, 185 )
 
 [node name="Door" parent="." instance=ExtResource( 5 )]
 position = Vector2( 710, 198 )
@@ -59,6 +57,9 @@ position = Vector2( 520, 201 )
 [node name="Spike2" parent="." instance=ExtResource( 8 )]
 position = Vector2( 101, 217 )
 
+[node name="Spike12" parent="." instance=ExtResource( 8 )]
+position = Vector2( 184, 169 )
+
 [node name="Spike9" parent="." instance=ExtResource( 8 )]
 position = Vector2( 438, 73 )
 
@@ -75,7 +76,7 @@ position = Vector2( 87, 121 )
 position = Vector2( 331, 217 )
 
 [node name="Spike8" parent="." instance=ExtResource( 8 )]
-position = Vector2( 632, 217 )
+position = Vector2( 664, 201 )
 
 [node name="Spike4" parent="." instance=ExtResource( 8 )]
 position = Vector2( 280, 185 )

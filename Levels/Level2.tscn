@@ -20,7 +20,7 @@ __meta__ = {
 volume_db = -10.0
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-position = Vector2( 360, 120 )
+position = Vector2( 7, 169 )
 
 [node name="Door" parent="." instance=ExtResource( 5 )]
 position = Vector2( 712, 136 )
