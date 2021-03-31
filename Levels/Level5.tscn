@@ -1,0 +1,46 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Levels/Level5.gd" type="Script" id=1]
+[ext_resource path="res://Objects/Potion/Potion.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tiles/TileStandsNew.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Actors/Player/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Key/Key.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Door/Door.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Levels/Extras/FallArea.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Audio/LevelBGM.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Actors/Monster/Monster.tscn" type="PackedScene" id=9]
+
+[node name="Level5" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 136.479 ],
+"_edit_vertical_guides_": [ 720.256, 362.86 ]
+}
+
+[node name="Potion" parent="." instance=ExtResource( 2 )]
+position = Vector2( 359.516, 85.1068 )
+
+[node name="TileMap" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( 22, 31, 0, 65558, 30, 0, 131094, 30, 0, 196630, 30, 0, 262166, 29, 0, 327701, 28, 0, 720896, 10, 0, 720897, 12, 0, 786432, 13, 0, 786433, 15, 0, 851968, 13, 0, 851969, 15, 0, 917504, 13, 0, 917505, 15, 0, 983040, 13, 0, 983041, 15, 0, 1048576, 13, 0, 1048577, 15, 0 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 15.2528, 162.091 )
+
+[node name="Key1" parent="." instance=ExtResource( 5 )]
+position = Vector2( 170.486, 222.132 )
+
+[node name="Key2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 612.943, 95.225 )
+
+[node name="Door" parent="." instance=ExtResource( 6 )]
+position = Vector2( 817.118, 154.218 )
+
+[node name="Fall" parent="." instance=ExtResource( 7 )]
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource( 8 )]
+
+[node name="Monster" parent="." instance=ExtResource( 9 )]
+position = Vector2( 216.91, 222.747 )
+
+[node name="Monster2" parent="." instance=ExtResource( 9 )]
+position = Vector2( 636.278, 96.8389 )
