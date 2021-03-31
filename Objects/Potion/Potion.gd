@@ -7,7 +7,7 @@ func _ready():
 	pass
 
 func _on_Area2D_body_entered(body):
-	if visible:
+	if visible && body.get_name() == "Player":
 		visible = false
 		emit_signal("reveal_keys")
 		get_node("AudioStreamPlayer").play()
