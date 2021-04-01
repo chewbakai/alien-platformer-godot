@@ -1,5 +1,5 @@
 extends StaticBody2D
-var Bullet = preload("res://Objects/Turrets/Bullet.tscn")
+var Bullet = preload("res://Objects/Turret/Bullet.tscn")
 var bullet
 export var wait_time = 1.0
 func _ready():

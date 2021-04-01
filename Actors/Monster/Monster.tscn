@@ -9,7 +9,7 @@
 [ext_resource path="res://Actors/Monster/KinematicBody2D.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 34, 2 )
+extents = Vector2( 30, 2 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {

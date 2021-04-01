@@ -23,7 +23,7 @@ func _physics_process(_delta):
 	
 	var walk_east = Input.is_action_pressed("walk_east")
 	var walk_west = Input.is_action_pressed("walk_west")
-	var jump = Input.is_action_just_pressed("jump")
+	var jump = Input.is_action_pressed("jump")
 		
 		
 	if walk_west:
@@ -110,3 +110,4 @@ func play_sound(input):
 		if input == "jump":
 			aud.set_volume_db(-10)
 		aud.play()
+

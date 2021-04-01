@@ -10,7 +10,6 @@ func _ready():
 func make_keys_invisible(my_bool):
 	var node
 	for number in range(req_keys):
-		print(number)
 		node = get_node("Key"+str(number+1))
 		print(my_bool)
 		node.get_node("CollisionShape2D").set_deferred("disabled", my_bool)
@@ -20,6 +19,5 @@ func make_keys_invisible(my_bool):
 			node.show()
 			
 func _on_Potion_collect():
-	print("yoo")
 	make_keys_invisible(false)
 	
