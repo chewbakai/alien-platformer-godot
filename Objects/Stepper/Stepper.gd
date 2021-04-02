@@ -10,7 +10,6 @@ var duration
 var follow = Vector2.ZERO
 
 func _ready():
-	print(position)
 	start_tween()
 	pass 
 	

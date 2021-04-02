@@ -108,6 +108,8 @@ func play_sound(input):
 		var aud = get_node("AudioStreamPlayer") 
 		aud.stream = sfx
 		if input == "jump":
-			aud.set_volume_db(-10)
+			aud.set_volume_db(-25)
 		aud.play()
 
+func set_camera(limit_right):
+	get_node("Camera2D").limit_right = limit_right

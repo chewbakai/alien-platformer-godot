@@ -1,6 +1,6 @@
 extends Node2D
 
-const TOTAL_LEVELS = 5
+const TOTAL_LEVELS = 7
 
 var req_keys = 0
 var Fail = preload("res://Levels/Extras/Fail.tscn")
@@ -15,7 +15,6 @@ func initialize(n_keys,lvl_number,limit_right):
 	set_req_keys(n_keys)
 	set_level_number(lvl_number)
 	player.connect("die",self,"_on_Player_die")
-	player.get_node("Camera2D").limit_right = limit_right
 	get_node("Door/Area2D").connect("body_entered",self,"_on_Door_entered")
 	get_node("Fall").connect("body_entered",self,"_on_Body_fall")
 	var intro = Intro.instance()
@@ -23,6 +22,9 @@ func initialize(n_keys,lvl_number,limit_right):
 	add_child(intro)
 	resume_audio()
 	save()
+	player.set_camera(limit_right)
+
+	
 	
 func set_req_keys(n_keys):
 	req_keys = n_keys

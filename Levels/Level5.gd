@@ -1,9 +1,8 @@
 extends "BaseLevel.gd"
 
 func _ready():
-	initialize(2,5,720)
+	initialize(2,5,830)
 	get_node("Potion").connect("reveal_keys",self,"_on_Potion_collect")
-	player.get_node("Camera2D").limit_right = 830
 	make_keys_invisible(true)
 	pass
 

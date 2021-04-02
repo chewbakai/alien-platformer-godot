@@ -48,7 +48,6 @@ shape = SubResource( 2 )
 current = true
 limit_left = 0
 limit_top = 0
-limit_right = 960
 limit_bottom = 270
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
@@ -61,6 +60,5 @@ editor_draw_drag_margin = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
-volume_db = -5.0
 bus = "SFX"
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

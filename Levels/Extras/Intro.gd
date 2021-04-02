@@ -8,10 +8,17 @@ func _ready():
 	pass 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
-	tree.paused = false
-	queue_free()
+	end_animation()
 	pass
 
 func set_level(lvl):
 	var node = get_node("ColorRect/CenterContainer/Label")
 	node.text = node.text + str(lvl)
+
+func _input(event):
+	if Input.is_action_pressed("ui_accept"):
+		end_animation()
+
+func end_animation():
+	tree.paused = false
+	queue_free()
