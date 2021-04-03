@@ -40,7 +40,6 @@ func get_level_number():
 
 func fail():
 	Pause.bgm_helper = 0
-#	player.die()
 	get_node("AudioStreamPlayer").stop()
 	var fail = Fail.instance()
 	fail.current_level = get_level_number()

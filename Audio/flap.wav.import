@@ -11,7 +11,7 @@ dest_files=[ "res://.import/flap.wav-52fd358b6c9da27dc78a3a779db2efc5.sample" ]
 
 [params]
 
-force/8_bit=true
+force/8_bit=false
 force/mono=false
 force/max_rate=false
 force/max_rate_hz=44100

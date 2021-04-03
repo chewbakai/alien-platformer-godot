@@ -5,7 +5,9 @@ onready var Bat = preload("res://Actors/Bat/Bat.tscn")
 
 func _ready():
 	initialize(3,7,960)
-	player.connect("die",self,"_on_Player_die_")
+	get_node("Potion").connect("reveal_keys",self,"_on_Potion_collect")
+	player.connect("die",self,"_on_Player_die")
+	make_keys_invisible(true)
 	pass # Replace with function body.
 
 
@@ -26,5 +28,21 @@ func _on_Gacha_enter(result):
 		load_previous_level()
 	else:
 		player.position.x = 807
-		player.position.y = 88
+		player.position.y = 90
+
+func make_keys_invisible(my_bool):
+	var node
+	for number in range(req_keys):
+		node = get_node("Key"+str(number+1))
+		print(my_bool)
+		node.get_node("CollisionShape2D").set_deferred("disabled", my_bool)
+		if my_bool:
+			node.hide()
+		else:
+			node.show()
+			
+func _on_Potion_collect():
+	make_keys_invisible(false)
+	
+
 		

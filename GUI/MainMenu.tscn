@@ -1,17 +1,19 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://GUI/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://GUI/ThemeUI.theme" type="Theme" id=2]
 [ext_resource path="res://Actors/Player/one_bit_transparent0449.png" type="Texture" id=3]
 [ext_resource path="res://Actors/Player/one_bit_transparent0450.png" type="Texture" id=4]
 [ext_resource path="res://Actors/Player/one_bit_transparent0451.png" type="Texture" id=5]
 [ext_resource path="res://GUI/LoopPlayerWalk.gd" type="Script" id=6]
-[ext_resource path="res://Audio/select_menu_085.wav" type="AudioStream" id=7]
+[ext_resource path="res://Audio/Select.tscn" type="PackedScene" id=7]
 [ext_resource path="res://GUI/MenuOptions.gd" type="Script" id=8]
 [ext_resource path="res://GUI/NewGame.tscn" type="PackedScene" id=9]
-[ext_resource path="res://GUI/Options.tscn" type="PackedScene" id=10]
+[ext_resource path="res://GUI/one_bit_transparent0983.png" type="Texture" id=10]
 [ext_resource path="res://GUI/Continue.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Audio/menu-bgm-HeatleyBros-Bok8nLviThg.wav" type="AudioStream" id=12]
+[ext_resource path="res://Audio/MenuBGM.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Tiles/TileStandsNew.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Audio/Enter.tscn" type="PackedScene" id=14]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -85,20 +87,29 @@ margin_bottom = 40.0
 margin_top = 52.0
 margin_bottom = 67.0
 
-[node name="Options" parent="HBoxContainer/VBoxContainer/MenuOptions" instance=ExtResource( 10 )]
+[node name="Options" type="Label" parent="HBoxContainer/VBoxContainer/MenuOptions"]
 margin_top = 79.0
+margin_right = 72.0
 margin_bottom = 94.0
+focus_neighbour_top = NodePath("../NewGame")
+focus_next = NodePath("../Continue")
+focus_previous = NodePath("../NewGame")
+theme = ExtResource( 2 )
+text = "Options"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HBoxContainer/VBoxContainer/MenuOptions"]
-stream = ExtResource( 7 )
-bus = "SFX"
+[node name="Sprite" type="Sprite" parent="HBoxContainer/VBoxContainer/MenuOptions/Options"]
+visible = false
+position = Vector2( -6.90446, 7.23855 )
+texture = ExtResource( 10 )
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="HBoxContainer/VBoxContainer/MenuOptions"]
-stream = ExtResource( 12 )
-volume_db = -15.0
-pitch_scale = 0.55
-autoplay = true
-bus = "BGM"
+[node name="MenuBGM" parent="HBoxContainer/VBoxContainer/MenuOptions" instance=ExtResource( 12 )]
+
+[node name="Select" parent="HBoxContainer/VBoxContainer/MenuOptions" instance=ExtResource( 7 )]
+
+[node name="Enter" parent="HBoxContainer/VBoxContainer/MenuOptions" instance=ExtResource( 14 )]
 
 [node name="Version" type="Label" parent="HBoxContainer/VBoxContainer"]
 margin_top = 164.0
@@ -113,11 +124,6 @@ margin_right = 322.0
 margin_bottom = 190.0
 custom_fonts/font = SubResource( 3 )
 text = "SpookyGlitches"
-
-[node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
-margin_left = 326.0
-margin_right = 326.0
-margin_bottom = 190.0
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="HBoxContainer"]
 position = Vector2( -14.9306, -32.0276 )
@@ -151,3 +157,4 @@ shape = SubResource( 6 )
 
 [node name="TileMap" parent="HBoxContainer" instance=ExtResource( 13 )]
 tile_data = PoolIntArray( 524297, 2, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 1, 0, 524307, 1, 0, 524308, 1, 0, 524309, 1, 0, 524310, 0, 0, 589833, 4, 0, 589846, 3, 0, 655369, 4, 0, 655382, 3, 0, 720905, 6, 0, 720918, 5, 0 )
+[connection signal="finished" from="HBoxContainer/VBoxContainer/MenuOptions/Enter" to="HBoxContainer/VBoxContainer/MenuOptions" method="_on_Enter_finished"]

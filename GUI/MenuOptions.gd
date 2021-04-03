@@ -3,15 +3,17 @@ extends VBoxContainer
 var past 
 var options = ["Continue", "NewGame", "Options"]
 var choice
+var entered = false
 
 func _ready():
 	choice = 0
 	past = 0
 	toggle_arrow(options[past],false)
+	resume_audio()
 
 func _input(event):
 	if event.is_action_pressed("ui_down") || event.is_action_pressed("crouch"):
-		play_sound("select")
+		play_sound("Select")
 		if choice < options.size() -1 :
 			choice += 1
 		else:
@@ -19,19 +21,14 @@ func _input(event):
 		toggle_arrow(options[past],true)
 		past = choice
 		toggle_arrow(options[choice],false)
-
 	elif event.is_action_pressed("ui_accept"):
-		play_sound("enter")
-		var lvl
-		match options[choice]:
-			"Continue":
-				lvl = load_file()
-			"NewGame": 
-				lvl = 1
-		init_game(lvl)
-		
+		play_sound("Enter")
+
+
 func init_game(lvl):
-	get_tree().change_scene("res://Levels/Level"+str(lvl)+".tscn")
+	var err = get_tree().change_scene("res://Levels/Level"+str(lvl)+".tscn")
+	if err != OK:
+		get_tree().change_scene("res://Levels/Level1.tscn")
 	
 func toggle_arrow(node,hide):
 	var sprite = get_node(node+"/Sprite")
@@ -41,17 +38,7 @@ func toggle_arrow(node,hide):
 		sprite.show()
 		
 func play_sound(input):
-	var aud = get_node("AudioStreamPlayer") 
-	var asset
-	match input:
-		"select":
-			asset = "res://Audio/select_menu_085.wav"	
-			aud.set_pitch_scale(1)
-		"enter":
-			asset = "res://Audio/enter_menu_150.wav"
-			aud.set_pitch_scale(0.8)
-	var sfx = load(asset)
-	aud.stream = sfx
+	var aud = get_node(input)
 	aud.play()
 
 func load_file():
@@ -61,3 +48,22 @@ func load_file():
 	save_game.open("user://savegame.save",File.READ)
 	return (parse_json(save_game.get_line())["current_level"])
 	
+func resume_audio():
+	var audio = get_node("MenuBGM")
+	audio.seek(Pause.bgm_helper)
+
+func _on_Enter_finished():
+	var lvl
+	print("hey")
+	match options[choice]:
+		"Continue":
+			lvl = load_file()
+			init_game(lvl)
+		"NewGame": 
+			lvl = 1
+			init_game(lvl)
+		"Options":
+			Pause.bgm_helper = get_node("MenuBGM").get_playback_position()
+			get_tree().change_scene("res://GUI/Options.tscn")
+
+

@@ -1,13 +1,12 @@
 extends CanvasLayer
-var tree
+
 
 func _ready():
-	tree = get_tree()
-	tree.paused = true
+	get_tree().set_pause(true)
 	get_node("AnimationPlayer").play("IdkAnymore")
 	pass 
 
-func _on_AnimationPlayer_animation_finished(anim_name):
+func _on_AnimationPlayer_animation_finished(_anim_name):
 	end_animation()
 	pass
 
@@ -16,9 +15,9 @@ func set_level(lvl):
 	node.text = node.text + str(lvl)
 
 func _input(event):
-	if Input.is_action_pressed("ui_accept"):
+	if event.is_action_pressed("ui_accept"):
 		end_animation()
 
 func end_animation():
-	tree.paused = false
+	get_tree().set_pause(false)
 	queue_free()

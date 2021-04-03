@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Levels/Extras/Fail.gd" type="Script" id=1]
 [ext_resource path="res://Audio/text.wav" type="AudioStream" id=2]
+[ext_resource path="res://Audio/hurt_explosion_02.wav" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://GUI/VCR_OSD_MONO_1.001.ttf"
@@ -88,4 +89,8 @@ autostart = true
 stream = ExtResource( 2 )
 volume_db = -10.0
 pitch_scale = 0.78
+bus = "SFX"
+
+[node name="Die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 bus = "SFX"

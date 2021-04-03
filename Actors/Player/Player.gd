@@ -67,16 +67,15 @@ func play_animation(movement):
 		anim_sprite.play("idle")
 	if movement == "jump":
 		anim_sprite.play("jump")
-		play_sound("jump")
+		play_sound()
 
 func get_name():
 	return _name
 
 func die():
-	if is_alive:
-		emit_signal("die")
-		is_alive = false
-		play_sound("die")
+	emit_signal("die")
+	queue_free()
+
 		
 func collect_key():
 	keys += 1
@@ -85,31 +84,18 @@ func collect_key():
 func get_keys():
 	return keys
 
-#func set_camera_limits(tile_map):
-#	$Camera2D.limit_right = (tile_map.get_used_rect().end.x * 16) - 16
-
 func set_position(pos):
 	position.x = pos.x
 	position.y = pos.y
 
 
-func _on_AudioStreamPlayer_finished():
-	if is_alive == false:
-		queue_free()
-		pass 
-
-func play_sound(input):
-	var asset
-	match input:
-		"jump": asset = "res://Audio/jump_jekkech.wav"
-		"die": asset = "res://Audio/hurt_explosion_02.wav"
-	if asset:
-		var sfx = load(asset)
-		var aud = get_node("AudioStreamPlayer") 
-		aud.stream = sfx
-		if input == "jump":
-			aud.set_volume_db(-25)
-		aud.play()
+func play_sound():
+	get_node("AudioStreamPlayer").play()
+#	var asset = "res://Audio/jump_jekkech.wav"
+#	var sfx = load(asset)
+#	var aud = get_node("AudioStreamPlayer") 
+#	aud.stream = sfx
+#	aud.play()
 
 func set_camera(limit_right):
 	get_node("Camera2D").limit_right = limit_right

@@ -12,3 +12,7 @@ func _on_Timer_timeout():
 	add_child(bullet)
 	audio.play()
 	pass
+
+
+
+	pass # Replace with function body.

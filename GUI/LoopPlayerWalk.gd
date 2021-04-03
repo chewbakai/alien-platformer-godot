@@ -11,7 +11,7 @@ func _ready():
 	anim_sprite.play("walk")
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	velocity.x = walk_speed
 	collision = move_and_collide(velocity)
 	if collision:

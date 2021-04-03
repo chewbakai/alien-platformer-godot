@@ -11,6 +11,7 @@ func _ready():
 	rand_generate.randomize()
 	speed = rand_generate.randi_range(50,65)
 	player.connect("die",self,"_on_Player_die")
+	get_node("AudioStreamPlayer2D").play(0.0)
 	print(speed)
 
 func _process(delta):

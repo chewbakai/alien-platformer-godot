@@ -17,7 +17,7 @@ animations = [ {
 } ]
 
 [node name="Bat" type="Area2D"]
-position = Vector2( 30.8569, 16.4217 )
+position = Vector2( 0.462379, -0.02104 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true
@@ -29,15 +29,12 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "fly"
-frame = 1
 speed_scale = 0.8
 playing = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
-pitch_scale = 1.1
-autoplay = true
-max_distance = 200.0
-attenuation = 0.307787
+volume_db = 15.0
+max_distance = 300.0
 bus = "SFX"
 [connection signal="body_entered" from="." to="." method="_on_Bat_body_entered"]

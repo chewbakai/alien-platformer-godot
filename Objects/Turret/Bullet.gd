@@ -3,9 +3,9 @@ extends Area2D
 var collision
 
 func _ready():
-	
 	position.x = 5
 	position.y = 3
+
 	pass
 
 func _physics_process(delta):

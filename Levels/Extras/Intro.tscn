@@ -68,4 +68,5 @@ anims/IdkAnymore = SubResource( 1 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
 volume_db = -10.0
+bus = "SFX"
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
