@@ -11,17 +11,30 @@ var buses_index = {}
 func _ready():
 	toggle_arrow(options[past],false)	
 	initialize()
+#	var audio_settings = Pause.get_audio_settings()
+#	if audio_settings:
+#
 	resume_audio()
 	pass
 
 func initialize():
 	var brr = "CenterContainer/VBoxContainer/"
 	var hbox_node
+	var aa
+	var dict = Pause.load_file()
+	if dict != null:
+		print(dict)
+		aa = [dict["Master"],dict["BGM"],dict["SFX"]]
+	else:
+		aa = [0,0,0]
+	var y = 0
 	for x in options:
 		buses_index[x] = AudioServer.get_bus_index(x)
 		hbox_node = get_node(brr+x)
-		update_progress_bar(hbox_node.get_node("ProgressBar"),AudioServer.get_bus_volume_db(buses_index[x]))
+		update_progress_bar(hbox_node.get_node("ProgressBar"),aa[y])
 		adjust_sprite(hbox_node,hbox_node.get_node("Label").get_global_position())
+		y += 1
+		
 	options.append("Back")
 	hbox_node = get_node(brr+"Back")
 	adjust_sprite(hbox_node,hbox_node.get_node("Label").get_global_position())
@@ -49,6 +62,7 @@ func _input(event):
 			db = -5
 		change_volume(options[choice],db)
 	elif event.is_action_pressed("ui_accept") && options[choice] == "Back":
+		Pause.save()
 		play_sound("Enter")
 
 func play_sound(input):
@@ -64,7 +78,7 @@ func toggle_arrow(node,hide):
 func change_volume(option,db):
 	var progress_bar = get_node("CenterContainer/VBoxContainer/"+option+"/ProgressBar")
 	var total_db = AudioServer.get_bus_volume_db(buses_index[option]) + db
-	if total_db <= (progress_bar.get_min()):
+	if total_db <= progress_bar.get_min() -5:
 		AudioServer.set_bus_mute(buses_index[option], true)
 		update_progress_bar(progress_bar,progress_bar.get_min())
 	elif total_db > progress_bar.get_max():

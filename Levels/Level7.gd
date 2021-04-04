@@ -8,7 +8,7 @@ func _ready():
 	get_node("Potion").connect("reveal_keys",self,"_on_Potion_collect")
 	player.connect("die",self,"_on_Player_die")
 	make_keys_invisible(true)
-	pass # Replace with function body.
+	pass
 
 
 func _on_Player_die():
@@ -17,24 +17,14 @@ func _on_Player_die():
 
 func _on_Timer_timeout():
 	var bat = Bat.instance()
+	bat.position.x = player.position.x - 150
 	add_child(bat)
-	pass # Replace with function body.
-
-func load_previous_level():
-	get_tree().change_scene("res://Levels/Level"+str(get_level_number()-1)+".tscn")			
-
-func _on_Gacha_enter(result):
-	if result <= 0.5:
-		load_previous_level()
-	else:
-		player.position.x = 807
-		player.position.y = 90
+	pass
 
 func make_keys_invisible(my_bool):
 	var node
 	for number in range(req_keys):
 		node = get_node("Key"+str(number+1))
-		print(my_bool)
 		node.get_node("CollisionShape2D").set_deferred("disabled", my_bool)
 		if my_bool:
 			node.hide()
@@ -43,6 +33,4 @@ func make_keys_invisible(my_bool):
 			
 func _on_Potion_collect():
 	make_keys_invisible(false)
-	
 
-		

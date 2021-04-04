@@ -41,29 +41,35 @@ func play_sound(input):
 	var aud = get_node(input)
 	aud.play()
 
-func load_file():
-	var save_game = File.new()
-	if ! save_game.file_exists("user://savegame.save"):
-		return 1
-	save_game.open("user://savegame.save",File.READ)
-	return (parse_json(save_game.get_line())["current_level"])
-	
+
 func resume_audio():
 	var audio = get_node("MenuBGM")
 	audio.seek(Pause.bgm_helper)
 
 func _on_Enter_finished():
 	var lvl
-	print("hey")
-	match options[choice]:
-		"Continue":
-			lvl = load_file()
-			init_game(lvl)
-		"NewGame": 
-			lvl = 1
-			init_game(lvl)
-		"Options":
-			Pause.bgm_helper = get_node("MenuBGM").get_playback_position()
-			get_tree().change_scene("res://GUI/Options.tscn")
+#	print("hey")
+#	match options[choice]:
+#		"Continue":
+#			lvl = load_file()
+#			Pause.bgm_helper = 0
+#			init_game(lvl)
+#		"NewGame": 
+#			lvl = 1
+#			Pause.bgm_helper = 0
+#			init_game(lvl)
+#		"Options":
+#			Pause.bgm_helper = get_node("MenuBGM").get_playback_position()
+#			get_tree().change_scene("res://GUI/Options.tscn")
 
-
+	if options[choice] == "Continue" || options[choice] == "NewGame":
+		match options[choice]:
+			"Continue":
+				lvl = Pause.dict && Pause.dict["current_level"] || 1 
+			"NewGame":
+				lvl = 1
+		Pause.bgm_helper = 0
+		init_game(lvl)
+	elif options[choice] == "Options":
+		Pause.bgm_helper = get_node("MenuBGM").get_playback_position()
+		get_tree().change_scene("res://GUI/Options.tscn")	

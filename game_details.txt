@@ -22,3 +22,5 @@ Levels BGM -https://www.youtube.com/watch?v=HHYOBwzT4u4&list=PLwJjxqYuirCLkq42mG
 Enter sfx -https://freesound.org/people/victorium183/sounds/476818/
 Potion  - https://harvey656.itch.io/8-bit-game-sound-effects-collection
 Bat - https://freesound.org/people/AgentDD/sounds/246225/
+UFO - https://freesound.org/people/Breviceps/sounds/454595/
+Float UFO    https://freesound.org/people/Petr2010/sounds/234258/

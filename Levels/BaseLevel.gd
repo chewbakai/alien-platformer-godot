@@ -5,6 +5,8 @@ const TOTAL_LEVELS = 7
 var req_keys = 0
 var Fail = preload("res://Levels/Extras/Fail.tscn")
 var Intro = preload("res://Levels/Extras/Intro.tscn")
+var Dialog = preload("res://GUI/Dialog.tscn")
+
 onready var player = get_node("Player")
 var level_number
 
@@ -15,17 +17,21 @@ func initialize(n_keys,lvl_number,limit_right):
 	set_req_keys(n_keys)
 	set_level_number(lvl_number)
 	player.connect("die",self,"_on_Player_die")
+	player.set_camera(limit_right)
 	get_node("Door/Area2D").connect("body_entered",self,"_on_Door_entered")
 	get_node("Fall").connect("body_entered",self,"_on_Body_fall")
 	var intro = Intro.instance()
 	intro.set_level(lvl_number)
-	add_child(intro)
 	resume_audio()
-	save()
-	player.set_camera(limit_right)
+#	Pause.dict["current_level"] = level_number
+	Pause.current_level = level_number
+#	if Pause.dict:
+#		Pause.dict["current_level"] = level_number
+#	else:
+#		Pause.dict = {"current_level": level_number}
+	Pause.save()
+	add_child(intro)
 
-	
-	
 func set_req_keys(n_keys):
 	req_keys = n_keys
 	
@@ -56,7 +62,10 @@ func _on_Door_entered(body):
 	if body.get_name() != "Player":
 		return
 	if body.get_keys() < req_keys:
-		dialog("I still lack keys")
+		var dialog = get_dialog_instance()
+		dialog.set_message("Alien: It seems that I still lack keys for this door.")
+		add_child(dialog)
+
 	else:
 		Pause.bgm_helper = get_node("AudioStreamPlayer").get_playback_position()
 		if level_number != TOTAL_LEVELS:
@@ -81,11 +90,17 @@ func resume_audio():
 	else:
 		audio.seek(0)
 
-func save():
-	var save_game = File.new()
-	save_game.open("user://savegame.save", File.WRITE)
-	var dict =  {
-		"current_level" : level_number
-	}
-	save_game.store_line(to_json(dict))
-	save_game.close()
+#func save():
+#	var save_game = File.new()
+#	save_game.open("user://savegame.save", File.WRITE)
+#	var dict =  {
+#		"current_level" : level_number
+#	}
+#	save_game.store_line(to_json(dict))
+#	save_game.close()
+#
+
+func get_dialog_instance():
+	var dialog = Dialog.instance()
+	add_child(dialog)
+	return dialog

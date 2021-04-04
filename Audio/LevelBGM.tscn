@@ -3,6 +3,7 @@
 [ext_resource path="res://Audio/levels-bgm.wav" type="AudioStream" id=1]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+pause_mode = 2
 stream = ExtResource( 1 )
 volume_db = -15.0
 pitch_scale = 0.8
