@@ -1,3 +1,10 @@
+Naming Convention
+
+For the files except audio, use Pascal Case. 
+Variables inside the script, use Snake Case
+If it's an override of a function or a signal, add _ of the beginning of the function.
+Signals - Godot recommends past tense of the function like _on_Area2D_body_entered
+
 Guide
 
 Level 1 - Fall
@@ -6,13 +13,14 @@ Level 3 - Fall, Spikes, Turrets
 Level 4 - Fall, Spikes, Turrets, Enemies
 Level 5 - Fall, Spikes, Turrets, Enemies, Potions
 Level 6 - Fall, Spikes, Turrets, Enemies, Potions, Moving Platforms/Trap Platforms
-Level 7 - Fall, Spikes, Turrets, Enemies, Potions, Moving Platforms/Trap Platforms, Invisible Keys
-Level 8 - Boss Level
+Level 7 - Fall, Spikes, Turrets, Enemies, Potions, Moving Platforms/Trap Platforms, Bats
+Final - Boss Level
+End Scene - Something2 UFO
 
 
 Assets Used
 
-Selct , Hurt - https://harvey656.itch.io/8-bit-game-sound-effects-collection
+Selct, Hurt - https://harvey656.itch.io/8-bit-game-sound-effects-collection
 Art - https://kenney.nl/assets/bit-platformer-pack
 Font - https://www.dafont.com/vcr-osd-mono.font
 Key - https://freesound.org/people/BeezleFM/sounds/512137/
