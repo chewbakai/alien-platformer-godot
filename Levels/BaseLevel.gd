@@ -29,7 +29,7 @@ func initialize(n_keys,lvl_number,limit_right):
 #		Pause.dict["current_level"] = level_number
 #	else:
 #		Pause.dict = {"current_level": level_number}
-	Pause.save()
+#	Pause.save()
 	add_child(intro)
 
 func set_req_keys(n_keys):

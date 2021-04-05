@@ -48,24 +48,10 @@ func resume_audio():
 
 func _on_Enter_finished():
 	var lvl
-#	print("hey")
-#	match options[choice]:
-#		"Continue":
-#			lvl = load_file()
-#			Pause.bgm_helper = 0
-#			init_game(lvl)
-#		"NewGame": 
-#			lvl = 1
-#			Pause.bgm_helper = 0
-#			init_game(lvl)
-#		"Options":
-#			Pause.bgm_helper = get_node("MenuBGM").get_playback_position()
-#			get_tree().change_scene("res://GUI/Options.tscn")
-
 	if options[choice] == "Continue" || options[choice] == "NewGame":
 		match options[choice]:
 			"Continue":
-				lvl = Pause.dict && Pause.dict["current_level"] || 1 
+				lvl = 1 
 			"NewGame":
 				lvl = 1
 		Pause.bgm_helper = 0
