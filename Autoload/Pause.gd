@@ -5,8 +5,8 @@ var options = ["Continue", "Restart", "Menu"]
 var choice = 0
 var bgm_helper = 0
 var is_shown = false
-var dict 
-var current_level
+
+
 func _ready():
 	past = 0
 	_show(false)

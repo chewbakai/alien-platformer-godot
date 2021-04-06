@@ -44,14 +44,14 @@ func play_sound(input):
 
 func resume_audio():
 	var audio = get_node("MenuBGM")
-	audio.seek(Pause.bgm_helper)
+	audio.seek(Global.bgm_helper)
 
 func _on_Enter_finished():
 	var lvl
 	if options[choice] == "Continue" || options[choice] == "NewGame":
 		match options[choice]:
 			"Continue":
-				lvl = 1 
+				lvl = Global.player_data["current_level"]
 			"NewGame":
 				lvl = 1
 		Pause.bgm_helper = 0

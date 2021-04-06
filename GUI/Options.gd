@@ -20,20 +20,12 @@ func _ready():
 func initialize():
 	var brr = "CenterContainer/VBoxContainer/"
 	var hbox_node
-	var aa
-#	var dict = Pause.load_file()
-#	if dict != null:
-#		print(dict)
-#		aa = [dict["Master"],dict["BGM"],dict["SFX"]]
-#	else:
-#		aa = [0,0,0]
-#	var y = 0
+	
 	for x in options:
 		buses_index[x] = AudioServer.get_bus_index(x)
 		hbox_node = get_node(brr+x)
-		update_progress_bar(hbox_node.get_node("ProgressBar"),0)
+		update_progress_bar(hbox_node.get_node("ProgressBar"), Global.player_data[x])
 		adjust_sprite(hbox_node,hbox_node.get_node("Label").get_global_position())
-#		y += 1
 		
 	options.append("Back")
 	hbox_node = get_node(brr+"Back")
@@ -62,7 +54,7 @@ func _input(event):
 			db = -5
 		change_volume(options[choice],db)
 	elif event.is_action_pressed("ui_accept") && options[choice] == "Back":
-#		Pause.save()
+		Global.save()
 		play_sound("Enter")
 
 func play_sound(input):
@@ -96,6 +88,6 @@ func resume_audio():
 	audio.seek(Pause.bgm_helper)
 
 func _on_Enter_finished():
-	Pause.bgm_helper = get_node("MenuBGM").get_playback_position()
+	Global.bgm_helper = get_node("MenuBGM").get_playback_position()
 	get_tree().change_scene("res://GUI/MainMenu.tscn")
 

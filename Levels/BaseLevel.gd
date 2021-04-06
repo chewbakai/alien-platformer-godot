@@ -14,6 +14,8 @@ func _ready():
 	pass
 	
 func initialize(n_keys,lvl_number,limit_right):
+	Global.player_data["current_level"] = lvl_number
+	Global.save()
 	set_req_keys(n_keys)
 	set_level_number(lvl_number)
 	player.connect("die",self,"_on_Player_die")
@@ -23,13 +25,6 @@ func initialize(n_keys,lvl_number,limit_right):
 	var intro = Intro.instance()
 	intro.set_level(lvl_number)
 	resume_audio()
-#	Pause.dict["current_level"] = level_number
-	Pause.current_level = level_number
-#	if Pause.dict:
-#		Pause.dict["current_level"] = level_number
-#	else:
-#		Pause.dict = {"current_level": level_number}
-#	Pause.save()
 	add_child(intro)
 
 func set_req_keys(n_keys):
@@ -85,20 +80,10 @@ func restart_level():
 
 func resume_audio():
 	var audio = get_node("AudioStreamPlayer")
-	if(Pause.bgm_helper != 0):
-		audio.seek(Pause.bgm_helper)
+	if(Global.bgm_helper != 0):
+		audio.seek(Global.bgm_helper)
 	else:
 		audio.seek(0)
-
-#func save():
-#	var save_game = File.new()
-#	save_game.open("user://savegame.save", File.WRITE)
-#	var dict =  {
-#		"current_level" : level_number
-#	}
-#	save_game.store_line(to_json(dict))
-#	save_game.close()
-#
 
 func get_dialog_instance():
 	var dialog = Dialog.instance()

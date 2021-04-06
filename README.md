@@ -1,6 +1,6 @@
 ## Naming Convention 
 
-For the files except audio, use ```PascalCase```  
+For the files except downloaded files, use ```PascalCase```  
 Variables inside the script, use ```snake_case```  
 If it's an override of a function or a signal, add _ of the beginning of the function.   
 Signals - Godot recommends past tense of the function like ```_on_Area2D_body_entered```
