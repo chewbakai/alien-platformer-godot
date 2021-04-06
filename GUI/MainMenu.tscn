@@ -71,6 +71,7 @@ text = "The Lost Alien"
 margin_top = 40.0
 margin_right = 72.0
 margin_bottom = 160.0
+rect_pivot_offset = Vector2( 100.499, 274.556 )
 size_flags_horizontal = 2
 size_flags_vertical = 3
 custom_constants/separation = 12
@@ -82,10 +83,14 @@ margin_left = 0.0
 margin_top = 25.0
 margin_right = 72.0
 margin_bottom = 40.0
+focus_neighbour_top = NodePath("../Exit")
+focus_previous = NodePath("")
 
 [node name="NewGame" parent="HBoxContainer/VBoxContainer/MenuOptions" instance=ExtResource( 9 )]
 margin_top = 52.0
 margin_bottom = 67.0
+focus_next = NodePath("")
+focus_previous = NodePath("")
 
 [node name="Options" type="Label" parent="HBoxContainer/VBoxContainer/MenuOptions"]
 margin_top = 79.0
