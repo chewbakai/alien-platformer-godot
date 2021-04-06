@@ -3,8 +3,8 @@ extends Node2D
 const TOTAL_LEVELS = 7
 
 var req_keys = 0
-var Fail = preload("res://Levels/Extras/Fail.tscn")
-var Intro = preload("res://Levels/Extras/Intro.tscn")
+var Fail = preload("res://Screens/Fail/Fail.tscn")
+var Intro = preload("res://Screens/Intro/Intro.tscn")
 var Dialog = preload("res://GUI/Dialog.tscn")
 
 onready var player = get_node("Player")

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Audio/LevelBGM.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Objects/Door/Door.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Levels/Extras/FallArea.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Fall/FallArea.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Actors/Monster/Monster.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Tiles/TileStandsNew.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Actors/Player/Player.tscn" type="PackedScene" id=6]

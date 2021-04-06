@@ -23,7 +23,7 @@ font_data = ExtResource( 1 )
 size = 14
 font_data = ExtResource( 1 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ) ],
 "loop": true,
@@ -31,10 +31,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 6.53122, 6.34676 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=5]
 
 [node name="MainMenu" type="MarginContainer"]
 anchor_right = 1.0
@@ -120,26 +120,26 @@ __meta__ = {
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="HBoxContainer/KinematicBody2D"]
 position = Vector2( 184.235, 152.006 )
-frames = SubResource( 4 )
+frames = SubResource( 3 )
 animation = "walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HBoxContainer/KinematicBody2D"]
 position = Vector2( 184.197, 153.654 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="HBoxContainer"]
 position = Vector2( 363.459, 128.583 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HBoxContainer/StaticBody2D"]
 position = Vector2( 16.5178, -1.41582 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="HBoxContainer"]
 position = Vector2( 151.074, 125.961 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HBoxContainer/StaticBody2D2"]
 position = Vector2( -15.8099, 0.235977 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="TileMap" parent="HBoxContainer" instance=ExtResource( 13 )]
 tile_data = PoolIntArray( 524297, 2, 0, 524298, 1, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 1, 0, 524303, 1, 0, 524304, 1, 0, 524305, 1, 0, 524306, 1, 0, 524307, 1, 0, 524308, 1, 0, 524309, 1, 0, 524310, 0, 0, 589833, 4, 0, 589846, 3, 0, 655369, 4, 0, 655382, 3, 0, 720905, 6, 0, 720918, 5, 0 )

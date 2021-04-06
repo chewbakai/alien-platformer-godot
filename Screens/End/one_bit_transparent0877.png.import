@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/one_bit_transparent0925.png-f4235c47c1c9ad743ffea26a68a4ccdf.stex"
+path="res://.import/one_bit_transparent0877.png-ed946e46a086d1934369981dfef2f7f7.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Levels/one_bit_transparent0925.png"
-dest_files=[ "res://.import/one_bit_transparent0925.png-f4235c47c1c9ad743ffea26a68a4ccdf.stex" ]
+source_file="res://Screens/End/one_bit_transparent0877.png"
+dest_files=[ "res://.import/one_bit_transparent0877.png-ed946e46a086d1934369981dfef2f7f7.stex" ]
 
 [params]
 

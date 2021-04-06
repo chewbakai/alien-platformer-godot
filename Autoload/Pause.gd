@@ -11,16 +11,7 @@ func _ready():
 	past = 0
 	_show(false)
 	toggle_arrow(options[choice],false)
-#	load_file()
-#	if dict && dict["Master"]:
-#		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),dict["Master"])
-#		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("BGM"),dict["BGM"])
-#		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"),dict["SFX"])
-#	var settings = get_audio_settings()
-#	if settings:	
-#		for x in settings:
-#			AudioServer.set_bus_volume_db(AudioServer.get_bus_index(x),settings[x])
-##
+
 func _input(event):
 	if event.is_action_pressed("pause"):
 		var tree = get_tree()		
@@ -67,41 +58,3 @@ func _show(_bool):
 		get_child(0).show()
 	else:
 		get_child(0).hide()
-#
-#func load_file():
-#	var file = File.new()
-#	if ! file.file_exists("user://savegame.save"):
-#		dict = null
-#		return dict
-#	else:
-#		var x = 0
-#		file.open("user://savegame.save", File.READ)
-#		var aa = parse_json(file.get_line())
-#		file.close()
-#		dict = aa
-#		return aa
-
-
-
-#
-#func save():
-#	var save_game = File.new()
-#	save_game.open("user://savegame.save", File.WRITE)
-#	var lvl = 1
-#	if dict != null:
-#		lvl = dict["current_level"]
-#	var new_dict =  {
-#		"current_level" : lvl ,
-#		"Master": AudioServer.get_bus_volume_db(AudioServer.get_bus_index("Master")),
-#		"SFX": AudioServer.get_bus_volume_db(AudioServer.get_bus_index("SFX")),
-#		"BGM": AudioServer.get_bus_volume_db(AudioServer.get_bus_index("BGM")),
-#	}
-#	save_game.store_line(to_json(new_dict))
-#	save_game.close()		
-#
-#func get_level_on_file():
-#	var save_game = File.new()
-#	if ! save_game.file_exists("user://savegame.save"):
-#		return 1
-#	save_game.open("user://savegame.save",File.READ)
-#	return (parse_json(save_game.get_line())["current_level"])

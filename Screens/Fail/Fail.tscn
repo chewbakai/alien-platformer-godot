@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Levels/Extras/Fail.gd" type="Script" id=1]
-[ext_resource path="res://Audio/text.wav" type="AudioStream" id=2]
-[ext_resource path="res://Audio/hurt_explosion_02.wav" type="AudioStream" id=3]
+[ext_resource path="res://Audio/text.wav" type="AudioStream" id=1]
+[ext_resource path="res://Screens/Fail/Fail.gd" type="Script" id=2]
+[ext_resource path="res://Screens/Fail/hurt_explosion_02.wav" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://GUI/VCR_OSD_MONO_1.001.ttf"
@@ -12,7 +12,6 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = SubResource( 1 )
 
 [sub_resource type="Animation" id=3]
-resource_name = "FailAnimation"
 length = 3.5
 step = 0.003
 tracks/0/type = "value"
@@ -54,7 +53,7 @@ tracks/2/keys = {
 
 [node name="MarginContainer" type="CanvasLayer"]
 layer = 0
-script = ExtResource( 1 )
+script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color( 0.700676, 0.700676, 0.700676, 1 )
@@ -86,7 +85,7 @@ wait_time = 4.0
 autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 2 )
+stream = ExtResource( 1 )
 volume_db = -10.0
 pitch_scale = 0.78
 bus = "SFX"

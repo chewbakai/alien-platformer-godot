@@ -6,7 +6,8 @@
 [ext_resource path="res://Actors/Player/Player.gd" type="Script" id=4]
 [ext_resource path="res://Actors/Player/one_bit_transparent0450.png" type="Texture" id=5]
 [ext_resource path="res://Actors/Player/one_bit_transparent0449.png" type="Texture" id=6]
-[ext_resource path="res://Audio/jump_jekkech.wav" type="AudioStream" id=7]
+[ext_resource path="res://Actors/Player/jump_jekkech.wav" type="AudioStream" id=7]
+
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
