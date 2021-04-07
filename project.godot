@@ -22,8 +22,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Autoload/Global.gd"
-Pause="*res://Autoload/Pause.gd"
+Pause="*res://Autoload/Pause.tscn"
+Global="*res://Autoload/Global.tscn"
 
 [display]
 
