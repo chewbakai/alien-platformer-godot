@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Audio/text.wav" type="AudioStream" id=1]
-[ext_resource path="res://GUI/ThemeUI.theme" type="Theme" id=2]
-[ext_resource path="res://Levels/Extras/Intro.gd" type="Script" id=3]
+[ext_resource path="res://GUI/ThemeUI.theme" type="Theme" id=1]
+[ext_resource path="res://Screens/Intro/Intro.gd" type="Script" id=2]
+[ext_resource path="res://Audio/text.wav" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "IdkAnymore"
@@ -36,7 +36,7 @@ tracks/1/keys = {
 [node name="Intro" type="CanvasLayer"]
 pause_mode = 2
 layer = 0
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchor_right = 1.0
@@ -58,7 +58,7 @@ margin_left = 213.0
 margin_top = 127.0
 margin_right = 267.0
 margin_bottom = 142.0
-theme = ExtResource( 2 )
+theme = ExtResource( 1 )
 text = "Level "
 percent_visible = 0.0
 
@@ -66,7 +66,7 @@ percent_visible = 0.0
 anims/IdkAnymore = SubResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 1 )
+stream = ExtResource( 3 )
 volume_db = -10.0
 bus = "SFX"
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

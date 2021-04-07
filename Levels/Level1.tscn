@@ -5,7 +5,7 @@
 [ext_resource path="res://Objects/Key/Key.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Objects/Door/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Actors/Player/Player.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Levels/Extras/FallArea.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Fall/FallArea.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Tiles/TileStandsNew.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]

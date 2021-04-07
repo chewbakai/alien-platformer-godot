@@ -22,7 +22,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Pause="*res://Levels/Extras/Pause.tscn"
+Pause="*res://Autoload/Pause.tscn"
+Global="*res://Autoload/Global.tscn"
 
 [display]
 

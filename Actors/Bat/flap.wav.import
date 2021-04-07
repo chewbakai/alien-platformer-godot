@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/flap.wav-52fd358b6c9da27dc78a3a779db2efc5.sample"
+path="res://.import/flap.wav-dfcade76400edd21b6cddbc3b9bf3140.sample"
 
 [deps]
 
-source_file="res://Audio/flap.wav"
-dest_files=[ "res://.import/flap.wav-52fd358b6c9da27dc78a3a779db2efc5.sample" ]
+source_file="res://Actors/Bat/flap.wav"
+dest_files=[ "res://.import/flap.wav-dfcade76400edd21b6cddbc3b9bf3140.sample" ]
 
 [params]
 

@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/enter_menu_2.wav-cbf19ab70a080d6e7509b15f28cfeb55.sample"
+path="res://.import/jump_jekkech.wav-7366fc0814b8091d45490bb475dcf762.sample"
 
 [deps]
 
-source_file="res://Audio/enter_menu_2.wav"
-dest_files=[ "res://.import/enter_menu_2.wav-cbf19ab70a080d6e7509b15f28cfeb55.sample" ]
+source_file="res://Actors/Player/jump_jekkech.wav"
+dest_files=[ "res://.import/jump_jekkech.wav-7366fc0814b8091d45490bb475dcf762.sample" ]
 
 [params]
 

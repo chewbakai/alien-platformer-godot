@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/hit_094.wav-a41ef1f1908997f9cb25844da4a3d76a.sample"
+path="res://.import/hit_094.wav-bd6083c09e3bc383a284e9db8b084d48.sample"
 
 [deps]
 
-source_file="res://Audio/hit_094.wav"
-dest_files=[ "res://.import/hit_094.wav-a41ef1f1908997f9cb25844da4a3d76a.sample" ]
+source_file="res://Objects/Turret/hit_094.wav"
+dest_files=[ "res://.import/hit_094.wav-bd6083c09e3bc383a284e9db8b084d48.sample" ]
 
 [params]
 
