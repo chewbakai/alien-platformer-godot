@@ -1,7 +1,7 @@
 extends VBoxContainer
 
 var past 
-var options = ["Continue", "NewGame", "Options" ]
+var options = ["Continue", "NewGame", "Options"]
 var choice
 var entered = false
 
@@ -12,7 +12,7 @@ func _ready():
 	resume_audio()
 
 func _input(event):
-	if event.is_action_pressed("ui_down") || event.is_action_pressed("ui_up"):
+	if event.is_action_pressed("ui_down") || event.is_action_pressed("crouch"):
 		play_sound("Select")
 		if choice < options.size() -1 :
 			choice += 1
@@ -41,6 +41,7 @@ func play_sound(input):
 	var aud = get_node(input)
 	aud.play()
 
+
 func resume_audio():
 	var audio = get_node("MenuBGM")
 	audio.seek(Pause.bgm_helper)
@@ -58,4 +59,3 @@ func _on_Enter_finished():
 	elif options[choice] == "Options":
 		Pause.bgm_helper = get_node("MenuBGM").get_playback_position()
 		get_tree().change_scene("res://GUI/Options.tscn")	
-
