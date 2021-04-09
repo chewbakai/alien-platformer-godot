@@ -88,7 +88,7 @@ focus_neighbour_top = NodePath("../NewGame")
 focus_next = NodePath("../Continue")
 focus_previous = NodePath("../NewGame")
 theme = ExtResource( 2 )
-text = "Options"
+text = "Settings"
 __meta__ = {
 "_edit_use_anchors_": false
 }
